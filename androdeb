@@ -12,7 +12,7 @@ source $spath/utils/banners
 source $spath/utils/remote
 
 # Set default vars
-DISTRO=buster; ARCH=arm64
+DISTRO=bullseye; ARCH=arm64
 ADB="adb"
 REMOTE="adb"
 FULL=0				# Default to a minimal install
