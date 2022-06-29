@@ -6,12 +6,6 @@ do_mounts()
 	mount --bind /dev/pts debian/dev/pts > /dev/null
 	mount --bind /sys debian/sys/ > /dev/null
 
-	if grep -qs '/sys/kernel/debug ' /proc/mounts; then
-		umount /sys/kernel/debug
-	fi
-
-	mount -t debugfs none /sys/kernel/debug/ > /dev/null
-
 	if [ -d /sys/fs/bpf/ ]; then
 		mkdir -p debian/sys/fs/bpf/
 		mount --bind /sys/fs/bpf/ debian/sys/fs/bpf/
