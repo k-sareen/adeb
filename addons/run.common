@@ -46,6 +46,11 @@ do_mounts()
 		mount --bind /dev/binderfs/ debian/dev/binderfs
 	fi
 
+  if [ -d /apex/com.android.art/ ]; then
+		mkdir -p debian/apex/com.android.art
+		mount --bind /apex/com.android.art debian/apex/com.android.art
+	fi
+
 }
 
 mount | grep debian > /dev/null
