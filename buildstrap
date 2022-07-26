@@ -65,9 +65,9 @@ sleep 5
 # Clone BCC if needed
 if [ $INSTALL_BCC -eq 1 ]; then
 	git clone --recursive https://github.com/iovisor/bcc.git $TDIR/debian/bcc-master
-  pushd $TDIR/debian/bcc-master
-  git checkout 5657c7dce897e600fb9dc7fceb56ed5ffdd6d1ca
-  popd
+    pushd $TDIR/debian/bcc-master
+    git checkout 5657c7dce897e600fb9dc7fceb56ed5ffdd6d1ca
+    popd
 	cp $spath/bcc/build-bcc.sh $TDIR/debian/bcc-master/
 	chroot $OUT_TMP /bcc-master/build-bcc.sh
 fi
@@ -75,9 +75,9 @@ fi
 # Clone bpftrace if needed
 if [ $INSTALL_BPFTRACE -eq 1 ]; then
 	git clone --recursive https://github.com/iovisor/bpftrace.git $TDIR/debian/bpftrace-master
-  pushd $TDIR/debian/bpftrace-master
-  git checkout 766787a67f97fb4e9312ab38b9f4dc89001f0c51
-  popd
+    pushd $TDIR/debian/bpftrace-master
+    git checkout 766787a67f97fb4e9312ab38b9f4dc89001f0c51
+    popd
 	cp $spath/bpftrace/build-bpftrace.sh $TDIR/debian/bpftrace-master/
 	chroot $OUT_TMP /bpftrace-master/build-bpftrace.sh
 fi
