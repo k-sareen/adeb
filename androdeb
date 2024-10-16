@@ -12,7 +12,7 @@ source $spath/utils/banners
 source $spath/utils/remote
 
 # Set default vars
-DISTRO=bullseye; ARCH=arm64
+DISTRO=bookworm; ARCH=arm64
 ADB="adb"
 REMOTE="adb"
 FULL=0				# Default to a minimal install
@@ -56,6 +56,7 @@ case $key in
     --arch) ARCH=$2; shift || true; shift || true; ;;
     --archive) DOWNLOAD=0; TARF=$2; shift || true; shift || true; ;;
     --bcc) FULL=1; source $spath/packages/bcc; shift || true;     ;;
+    --bpftrace) FULL=1; source $spath/packages/bpftrace; shift || true;     ;;
     --tempdir) TDIR="$2"; shift || true;     shift || true;     ;;
     --build) DOWNLOAD=0;  shift || true;     ;;
     --buildtar) BTAR=1; DOWNLOAD=0; TARDIR="$2"; shift || true;     shift || true;     ;;
@@ -149,7 +150,7 @@ if [ ! -z ${ASHELL+x} ]; then
 fi
 
 ##########################################################
-#  PREPARE 
+#  PREPARE
 ##########################################################
 
 function do_cleanup() {

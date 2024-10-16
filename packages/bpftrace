@@ -1,22 +1,25 @@
 PACKAGES+="
-  bison 
-  cmake 
-  flex 
-  g++ 
-  git 
-  libelf-dev 
-  zlib1g-dev 
-  libfl-dev 
-  systemtap-sdt-dev 
-  binutils-dev 
-  libcereal-dev 
-  llvm-11-dev
-  llvm-11-runtime 
-  libclang-11-dev 
-  clang-11
-  libgtest-dev 
-  libgmock-dev 
-  asciidoctor
+asciidoctor
+binutils-dev
+bison
+bpfcc-tools
+build-essential
+clang
+cmake
+flex
+libbpf-dev
+libbpfcc-dev
+libcereal-dev
+libelf-dev
+libiberty-dev
+libpcap-dev
+llvm-dev
+liblldb-dev
+libclang-dev
+libzstd-dev
+systemtap-sdt-dev
+zlib1g-dev
 "
 
+INSTALL_BCC=0
 INSTALL_BPFTRACE=1

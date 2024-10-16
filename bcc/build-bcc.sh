@@ -5,7 +5,7 @@ spath=$( cd "$(dirname "$0")" ; pwd -P )
 cd $spath
 
 rm -rf build && mkdir -p build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_C_COMPILER=clang-11 -DCMAKE_CXX_COMPILER=clang++-11
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_C_COMPILER=clang-14 -DCMAKE_CXX_COMPILER=clang++-14
 make -j
 make install
 cmake -DPYTHON_CMD=python3 ..
